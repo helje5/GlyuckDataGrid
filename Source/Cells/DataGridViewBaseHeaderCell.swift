@@ -95,7 +95,7 @@ open class DataGridViewBaseHeaderCell: DataGridViewBaseCell {
         self.indexPath = indexPath
     }
 
-    open func didTap(_ gesture: UITapGestureRecognizer) {
+  @objc open func didTap(_ gesture: UITapGestureRecognizer) {
         dataGridView.collectionViewDelegate.collectionView(dataGridView.collectionView, didTapHeaderForColumn: indexPath.index)
     }
 }

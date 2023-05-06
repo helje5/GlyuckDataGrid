@@ -25,14 +25,13 @@ class SpreadSheetViewController: UIViewController, DataGridViewDataSource, DataG
 
     @IBOutlet weak var dataGridView: DataGridView!
 
-    static override func initialize() {
-        super.initialize()
-
-        let dataGridAppearance = DataGridView.glyuck_appearanceWhenContained(in: self)!
+    private static let _initialize = {
+        let clz = SpreadSheetViewController.self
+        let dataGridAppearance = DataGridView.glyuck_appearanceWhenContained(in: clz)!
         dataGridAppearance.row1BackgroundColor = nil
         dataGridAppearance.row2BackgroundColor = nil
 
-        let cornerHeaderAppearance = DataGridViewCornerHeaderCell.glyuck_appearanceWhenContained(in: self)!
+        let cornerHeaderAppearance = DataGridViewCornerHeaderCell.glyuck_appearanceWhenContained(in: clz)!
         cornerHeaderAppearance.backgroundColor = Colors.headerBackground
         cornerHeaderAppearance.borderLeftWidth = 1 / UIScreen.main.scale
         cornerHeaderAppearance.borderTopWidth = 1 / UIScreen.main.scale
@@ -43,7 +42,7 @@ class SpreadSheetViewController: UIViewController, DataGridViewDataSource, DataG
         cornerHeaderAppearance.borderRightColor = Colors.border
         cornerHeaderAppearance.borderBottomColor = Colors.border
 
-        let rowHeaderAppearance = DataGridViewRowHeaderCell.glyuck_appearanceWhenContained(in :self)!
+        let rowHeaderAppearance = DataGridViewRowHeaderCell.glyuck_appearanceWhenContained(in: clz)!
         rowHeaderAppearance.backgroundColor = Colors.headerBackground
         rowHeaderAppearance.borderLeftWidth = 1 / UIScreen.main.scale
         rowHeaderAppearance.borderBottomWidth = 1 / UIScreen.main.scale
@@ -52,10 +51,10 @@ class SpreadSheetViewController: UIViewController, DataGridViewDataSource, DataG
         rowHeaderAppearance.borderBottomColor = Colors.border
         rowHeaderAppearance.borderRightColor = Colors.border
 
-        let rowHeaderLabelAppearane = UILabel.glyuck_appearanceWhenContained(in: self, class2: DataGridViewRowHeaderCell.self)!
+        let rowHeaderLabelAppearane = UILabel.glyuck_appearanceWhenContained(in: clz, class2: DataGridViewRowHeaderCell.self)!
         rowHeaderLabelAppearane.appearanceTextAlignment = .right
 
-        let columnHeaderAppearance = DataGridViewColumnHeaderCell.glyuck_appearanceWhenContained(in: self)!
+        let columnHeaderAppearance = DataGridViewColumnHeaderCell.glyuck_appearanceWhenContained(in: clz)!
         columnHeaderAppearance.backgroundColor = Colors.headerBackground
         columnHeaderAppearance.borderTopWidth = 1 / UIScreen.main.scale
         columnHeaderAppearance.borderBottomWidth = 1 / UIScreen.main.scale
@@ -64,19 +63,21 @@ class SpreadSheetViewController: UIViewController, DataGridViewDataSource, DataG
         columnHeaderAppearance.borderBottomColor = Colors.border
         columnHeaderAppearance.borderRightColor = Colors.border
 
-        let cellAppearance = DataGridViewContentCell.glyuck_appearanceWhenContained(in: self)!
+        let cellAppearance = DataGridViewContentCell.glyuck_appearanceWhenContained(in: clz)!
         cellAppearance.borderRightWidth = 1 / UIScreen.main.scale
         cellAppearance.borderRightColor = UIColor(white: 0.73, alpha: 1)
         cellAppearance.borderBottomWidth = 1 / UIScreen.main.scale
         cellAppearance.borderBottomColor = UIColor(white: 0.73, alpha: 1)
 
         columnHeaderAppearance.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        let labelAppearance = UILabel.glyuck_appearanceWhenContained(in: self)!
-        labelAppearance.appearanceFont = UIFont.systemFont(ofSize: 12, weight: UIFontWeightLight)
+        let labelAppearance = UILabel.glyuck_appearanceWhenContained(in: clz)!
+        labelAppearance.appearanceFont = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
         labelAppearance.appearanceTextAlignment = .center
     }
 
     override func viewDidLoad() {
+        _ = Self._initialize
+      
         super.viewDidLoad()
 
         dataGridView.columnHeaderHeight = 40

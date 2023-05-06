@@ -334,7 +334,7 @@ open class DataGridView: UIView {
         collectionView.indexPathsForSelectedItems?.forEach { collectionView.deselectItem(at: $0, animated: animated) }
         for column in 0..<numberOfColumns() {
             let indexPath = IndexPath(item: column, section: row)
-            collectionView.selectItem(at: indexPath, animated: animated, scrollPosition: UICollectionViewScrollPosition())
+          collectionView.selectItem(at: indexPath, animated: animated, scrollPosition: UICollectionView.ScrollPosition())
         }
     }
 
@@ -469,17 +469,14 @@ open class DataGridView: UIView {
 
     // UIView
 
-    open override static func initialize() {
-        super.initialize()
-        _ = DataGridView.__once
-    }
-
     public override init(frame: CGRect) {
+        _ = DataGridView.__once
         super.init(frame: frame)
         setupDataGridView()
     }
 
     public required init?(coder aDecoder: NSCoder) {
+        _ = DataGridView.__once
         super.init(coder: aDecoder)
         setupDataGridView()
     }

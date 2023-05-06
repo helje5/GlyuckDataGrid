@@ -19,7 +19,6 @@
 		397B94191BFA02BC006AB40B /* SpreadSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B94171BFA02BC006AB40B /* SpreadSheetCell.swift */; };
 		397B941A1BFA02BC006AB40B /* SpreadSheetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397B94181BFA02BC006AB40B /* SpreadSheetCell.xib */; };
 		397B941D1BFB1265006AB40B /* SimpleDataGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B941C1BFB1265006AB40B /* SimpleDataGridViewController.swift */; };
-		399209521DE6DF07000E1F1D /* ObjectiveCDataGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 399209511DE6DF07000E1F1D /* ObjectiveCDataGridViewController.m */; };
 		399D79861B6BD66D0070BC49 /* DataGridViewLayoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D79851B6BD66D0070BC49 /* DataGridViewLayoutSpec.swift */; };
 		399D79891B6BD9F00070BC49 /* NSIndexPath+DataGridSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D79881B6BD9F00070BC49 /* NSIndexPath+DataGridSpec.swift */; };
 		39B95ABE1B7B2E7D003DEE52 /* DataGridViewBaseCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B95ABC1B7B2553003DEE52 /* DataGridViewBaseCellSpec.swift */; };
@@ -56,9 +55,6 @@
 		397B94171BFA02BC006AB40B /* SpreadSheetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadSheetCell.swift; sourceTree = "<group>"; };
 		397B94181BFA02BC006AB40B /* SpreadSheetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpreadSheetCell.xib; sourceTree = "<group>"; };
 		397B941C1BFB1265006AB40B /* SimpleDataGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleDataGridViewController.swift; sourceTree = "<group>"; };
-		3992094F1DE6DF07000E1F1D /* GlyuckDataGrid_Example-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GlyuckDataGrid_Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		399209501DE6DF07000E1F1D /* ObjectiveCDataGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCDataGridViewController.h; sourceTree = "<group>"; };
-		399209511DE6DF07000E1F1D /* ObjectiveCDataGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveCDataGridViewController.m; sourceTree = "<group>"; };
 		399D79851B6BD66D0070BC49 /* DataGridViewLayoutSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGridViewLayoutSpec.swift; sourceTree = "<group>"; };
 		399D79881B6BD9F00070BC49 /* NSIndexPath+DataGridSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSIndexPath+DataGridSpec.swift"; sourceTree = "<group>"; };
 		39B95ABC1B7B2553003DEE52 /* DataGridViewBaseCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGridViewBaseCellSpec.swift; sourceTree = "<group>"; };
@@ -140,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				394F1F421C03349C00F7F462 /* MultiplicationTable */,
-				3992094E1DE6DF07000E1F1D /* ObjectiveC */,
 				397B941B1BFB1265006AB40B /* SimpleDataGrid */,
 				397B94131BF9FD24006AB40B /* SpreadSheet */,
 			);
@@ -171,16 +166,6 @@
 				397B941C1BFB1265006AB40B /* SimpleDataGridViewController.swift */,
 			);
 			path = SimpleDataGrid;
-			sourceTree = "<group>";
-		};
-		3992094E1DE6DF07000E1F1D /* ObjectiveC */ = {
-			isa = PBXGroup;
-			children = (
-				3992094F1DE6DF07000E1F1D /* GlyuckDataGrid_Example-Bridging-Header.h */,
-				399209501DE6DF07000E1F1D /* ObjectiveCDataGridViewController.h */,
-				399209511DE6DF07000E1F1D /* ObjectiveCDataGridViewController.m */,
-			);
-			path = ObjectiveC;
 			sourceTree = "<group>";
 		};
 		399D79871B6BD9E10070BC49 /* Utility */ = {
@@ -292,7 +277,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				F475821A0549D1A0BF818838 /* [CP] Embed Pods Frameworks */,
-				093B26BBDC98DD67073F13D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -312,7 +296,6 @@
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
 				3B023957F5AEF07B18EA2212 /* [CP] Embed Pods Frameworks */,
-				1107411C237B189882701FEC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,6 +333,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -386,49 +370,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		093B26BBDC98DD67073F13D7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GlyuckDataGrid_Example/Pods-GlyuckDataGrid_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1107411C237B189882701FEC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GlyuckDataGrid_Tests/Pods-GlyuckDataGrid_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3B023957F5AEF07B18EA2212 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GlyuckDataGrid_Tests/Pods-GlyuckDataGrid_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GlyuckDataGrid/GlyuckDataGrid.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GlyuckDataGrid.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GlyuckDataGrid_Tests/Pods-GlyuckDataGrid_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GlyuckDataGrid_Tests/Pods-GlyuckDataGrid_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		828250D15011D84DEB8923B8 /* [CP] Check Pods Manifest.lock */ = {
@@ -437,13 +398,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GlyuckDataGrid_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F018D6774197F0D5B96E0D96 /* [CP] Check Pods Manifest.lock */ = {
@@ -452,13 +416,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GlyuckDataGrid_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F475821A0549D1A0BF818838 /* [CP] Embed Pods Frameworks */ = {
@@ -467,13 +434,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GlyuckDataGrid_Example/Pods-GlyuckDataGrid_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GlyuckDataGrid/GlyuckDataGrid.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GlyuckDataGrid.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GlyuckDataGrid_Example/Pods-GlyuckDataGrid_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GlyuckDataGrid_Example/Pods-GlyuckDataGrid_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -485,7 +455,6 @@
 			files = (
 				397B94191BFA02BC006AB40B /* SpreadSheetCell.swift in Sources */,
 				39B95AC51B7DC095003DEE52 /* F1DataSource.swift in Sources */,
-				399209521DE6DF07000E1F1D /* ObjectiveCDataGridViewController.m in Sources */,
 				397B94151BFA0267006AB40B /* SpreadSheetViewController.swift in Sources */,
 				394F1F441C03349C00F7F462 /* MultiplicationTableViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
@@ -584,7 +553,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -624,7 +593,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -637,13 +606,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GlyuckDataGrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GlyuckDataGrid/Examples/ObjectiveC/GlyuckDataGrid_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -655,12 +624,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GlyuckDataGrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GlyuckDataGrid/Examples/ObjectiveC/GlyuckDataGrid_Example-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -679,10 +648,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GlyuckDataGrid_Example.app/GlyuckDataGrid_Example";
 			};
 			name = Debug;
@@ -698,10 +668,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GlyuckDataGrid_Example.app/GlyuckDataGrid_Example";
 			};
 			name = Release;
