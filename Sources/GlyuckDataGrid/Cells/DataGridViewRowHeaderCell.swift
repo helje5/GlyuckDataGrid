@@ -10,7 +10,7 @@ import UIKit
 
 
 open class DataGridViewRowHeaderCell: DataGridViewBaseHeaderCell {
-    private static var __once: () = {
+    private static let __once = {
         let appearance = DataGridViewRowHeaderCell.appearance()
         appearance.backgroundColor = UIColor.white
         appearance.sortedBackgroundColor = UIColor(white: 220.0/255.0, alpha: 1)
@@ -20,9 +20,9 @@ open class DataGridViewRowHeaderCell: DataGridViewBaseHeaderCell {
         appearance.borderRightColor = UIColor(white: 0.73, alpha: 1)
         appearance.borderRightWidth = 1 / UIScreen.main.scale
         
-        if let labelAppearance = UILabel.glyuck_appearanceWhenContained(in: DataGridViewRowHeaderCell.self) {
+        if let labelAppearance = UILabel.appearance(whenContainedInInstancesOf: [DataGridViewRowHeaderCell.self]) as? UILabelAppearance {
             if #available(iOS 8.2, *) {
-                labelAppearance.appearanceFont = UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular)
+              labelAppearance.appearanceFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.regular)
             } else {
                 labelAppearance.appearanceFont = UIFont(name: "HelveticaNeue", size: 14)
             }
@@ -30,10 +30,16 @@ open class DataGridViewRowHeaderCell: DataGridViewBaseHeaderCell {
             labelAppearance.appearanceMinimumScaleFactor = 0.5
             labelAppearance.appearanceNumberOfLines = 0
         }
-        
+        return appearance
     }()
-    open override static func initialize() {
-        super.initialize()
+
+    override public init(frame: CGRect) {
         _ = DataGridViewRowHeaderCell.__once
+        super.init(frame: frame)
+    }
+
+    public required init?(coder aDecoder: NSCoder) {
+        _ = DataGridViewRowHeaderCell.__once
+        super.init(coder: aDecoder)
     }
 }

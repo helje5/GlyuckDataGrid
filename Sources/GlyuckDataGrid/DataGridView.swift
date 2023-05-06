@@ -180,11 +180,13 @@ import UIKit
  An instance of DataGridView (or simply, a data grid view) is a means for displaying and editing data represented in multicolumn tables (or 2-dimension matrices).
 */
 open class DataGridView: UIView {
-    private static var __once: () = {
-            let appearance = DataGridView.appearance()
-            appearance.row1BackgroundColor = UIColor(white: 0.95, alpha: 1)
-            appearance.row2BackgroundColor = UIColor.white
-        }()
+    private static let __once = {
+        let appearance = DataGridView.appearance()
+        appearance.row1BackgroundColor = UIColor(white: 0.95, alpha: 1)
+        appearance.row2BackgroundColor = UIColor.white
+        return appearance
+    }()
+  
     /// Constants for reuse identifiers for default cells.
     public enum ReuseIdentifiers {
         public static let defaultColumnHeader = "DataGridViewColumnHeaderCell"
@@ -238,9 +240,9 @@ open class DataGridView: UIView {
     /// Width for vertical header displayed on left of each row. If zero, vertical headers are not displayed.
     open var rowHeaderWidth: CGFloat = 0
     /// Background color for even rows of zebra-striped tables.
-    open dynamic var row1BackgroundColor: UIColor?
+    @objc open dynamic var row1BackgroundColor: UIColor?
     /// Background color for odd rows of zebra-striped tables.
-    open dynamic var row2BackgroundColor: UIColor?
+    @objc open dynamic var row2BackgroundColor: UIColor?
 
     /// Current sort column of data grid view.
     fileprivate(set) open var sortColumn: Int?
@@ -334,7 +336,7 @@ open class DataGridView: UIView {
         collectionView.indexPathsForSelectedItems?.forEach { collectionView.deselectItem(at: $0, animated: animated) }
         for column in 0..<numberOfColumns() {
             let indexPath = IndexPath(item: column, section: row)
-            collectionView.selectItem(at: indexPath, animated: animated, scrollPosition: UICollectionViewScrollPosition())
+          collectionView.selectItem(at: indexPath, animated: animated, scrollPosition: UICollectionView.ScrollPosition())
         }
     }
 
@@ -469,18 +471,15 @@ open class DataGridView: UIView {
 
     // UIView
 
-    open override static func initialize() {
-        super.initialize()
-        _ = DataGridView.__once
-    }
-
     public override init(frame: CGRect) {
+        _ = DataGridView.__once
         super.init(frame: frame)
         setupDataGridView()
     }
 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        _ = DataGridView.__once
         setupDataGridView()
     }
 

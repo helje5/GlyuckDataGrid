@@ -1,9 +1,6 @@
 # GlyuckDataGrid
-[![CI Status](http://img.shields.io/travis/glyuck/GlyuckDataGrid.svg?style=flat)](https://travis-ci.org/Glyuck/GlyuckDataGrid)
-[![Version](https://img.shields.io/cocoapods/v/GlyuckDataGrid.svg?style=flat)](http://cocoapods.org/pods/GlyuckDataGrid)
-[![Quality](https://apps.e-sites.nl/cocoapodsquality/GlyuckDataGrid/badge.svg?clear_cache)](https://cocoapods.org/pods/GlyuckDataGrid/quality)
-[![License](https://img.shields.io/cocoapods/l/GlyuckDataGrid.svg?style=flat)](http://cocoapods.org/pods/GlyuckDataGrid)
-[![Platform](https://img.shields.io/cocoapods/p/GlyuckDataGrid.svg?style=flat)](http://cocoapods.org/pods/GlyuckDataGrid)
+
+HH: Fork updated to Swift 5, main repo doesn't seem to apply PRs.
 
 The `GlyuckDataGrid` is a custom view intended to render multicolumn tables (aka data grids, spreadsheets). Uses `UICollectionView` with custom `UICollectionViewLayout` internally. 
 
@@ -16,7 +13,6 @@ The `GlyuckDataGrid` is a custom view intended to render multicolumn tables (aka
 ```swift
 import UIKit
 import GlyuckDataGrid
-
 
 class MultiplicationTableViewController: UIViewController, DataGridViewDataSource {
     // You can create view outlet in a Storyboard

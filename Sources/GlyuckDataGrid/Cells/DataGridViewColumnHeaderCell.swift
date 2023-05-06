@@ -8,7 +8,7 @@ import UIKit
 
 
 open class DataGridViewColumnHeaderCell: DataGridViewBaseHeaderCell {
-    private static var __once: () = {
+    private static let __once = {
         let appearance = DataGridViewColumnHeaderCell.appearance()
         appearance.backgroundColor = UIColor.white
         appearance.sortedBackgroundColor = UIColor(white: 220.0/255.0, alpha: 1)
@@ -18,9 +18,9 @@ open class DataGridViewColumnHeaderCell: DataGridViewBaseHeaderCell {
         appearance.borderBottomColor = UIColor(white: 0.73, alpha: 1)
         appearance.borderBottomWidth = 1 / UIScreen.main.scale
         
-        if let labelAppearance = UILabel.glyuck_appearanceWhenContained(in: DataGridViewColumnHeaderCell.self) {
+        if let labelAppearance = UILabel.appearance(whenContainedInInstancesOf: [ DataGridViewColumnHeaderCell.self ]) as? UILabelAppearance {
             if #available(iOS 8.2, *) {
-                labelAppearance.appearanceFont = UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular)
+              labelAppearance.appearanceFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.regular)
             } else {
                 labelAppearance.appearanceFont = UIFont(name: "HelveticaNeue", size: 14)
             }
@@ -29,14 +29,20 @@ open class DataGridViewColumnHeaderCell: DataGridViewBaseHeaderCell {
             labelAppearance.appearanceMinimumScaleFactor = 0.5
             labelAppearance.appearanceNumberOfLines = 0
         }
-        
+        return appearance
     }()
     // MARK: - UIView
-    open override static func initialize() {
-        super.initialize()
+  
+    override public init(frame: CGRect) {
         _ = DataGridViewColumnHeaderCell.__once
+        super.init(frame: frame)
     }
-    
+  
+    public required init?(coder aDecoder: NSCoder) {
+        _ = DataGridViewColumnHeaderCell.__once
+        super.init(coder: aDecoder)
+    }
+  
     // MARK: - Custom methods
     
     open override func didTap(_ gesture: UITapGestureRecognizer) {
