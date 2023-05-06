@@ -15,7 +15,7 @@ open class DataGridViewContentCell: DataGridViewBaseCell {
         let appearance = DataGridViewContentCell.appearance()
         appearance.textLabelInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         
-        if let labelAppearance = UILabel.glyuck_appearanceWhenContained(in: DataGridViewContentCell.self) {
+        if let labelAppearance = UILabel.glyuck_appearanceWhenContained(in: DataGridViewContentCell.self) as? UILabelAppearance {
             if #available(iOS 8.2, *) {
               labelAppearance.appearanceFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.light)
             } else {

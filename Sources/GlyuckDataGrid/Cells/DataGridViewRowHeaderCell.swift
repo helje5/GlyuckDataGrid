@@ -20,7 +20,7 @@ open class DataGridViewRowHeaderCell: DataGridViewBaseHeaderCell {
         appearance.borderRightColor = UIColor(white: 0.73, alpha: 1)
         appearance.borderRightWidth = 1 / UIScreen.main.scale
         
-        if let labelAppearance = UILabel.glyuck_appearanceWhenContained(in: DataGridViewRowHeaderCell.self) {
+        if let labelAppearance = UILabel.appearance(whenContainedInInstancesOf: [DataGridViewRowHeaderCell.self]) as? UILabelAppearance {
             if #available(iOS 8.2, *) {
               labelAppearance.appearanceFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.regular)
             } else {
