@@ -23,12 +23,12 @@ open class DataGridViewBaseHeaderCell: DataGridViewBaseCell {
         }
     }
     /// Background color for sorted state
-    open dynamic var sortedBackgroundColor: UIColor? {
+    @objc open dynamic var sortedBackgroundColor: UIColor? {
         didSet {
             updateSortedTitleAndBackground()
         }
     }
-    open override dynamic var backgroundColor: UIColor? {
+    @objc open override dynamic var backgroundColor: UIColor? {
         get {
             return super.backgroundColor
         }
@@ -37,9 +37,9 @@ open class DataGridViewBaseHeaderCell: DataGridViewBaseCell {
         }
     }
     /// This suffix will be appended to title if column/row is sorted in ascending order.
-    open dynamic var sortAscSuffix: String?
+    @objc open dynamic var sortAscSuffix: String?
     /// This suffix will be appended to title if column/row is sorted in descending order.
-    open dynamic var sortDescSuffix: String?
+    @objc open dynamic var sortDescSuffix: String?
     /// Header title. Use this property instead of assigning to textLabel.text.
     open var title: String = "" {
         didSet {

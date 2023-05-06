@@ -10,7 +10,7 @@ import UIKit
 
 
 open class DataGridViewRowHeaderCell: DataGridViewBaseHeaderCell {
-    private static var __once: () = {
+    private static let __once = {
         let appearance = DataGridViewRowHeaderCell.appearance()
         appearance.backgroundColor = UIColor.white
         appearance.sortedBackgroundColor = UIColor(white: 220.0/255.0, alpha: 1)
@@ -30,7 +30,7 @@ open class DataGridViewRowHeaderCell: DataGridViewBaseHeaderCell {
             labelAppearance.appearanceMinimumScaleFactor = 0.5
             labelAppearance.appearanceNumberOfLines = 0
         }
-        
+        return appearance
     }()
 
     override public init(frame: CGRect) {

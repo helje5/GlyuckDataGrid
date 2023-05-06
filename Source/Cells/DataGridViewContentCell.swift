@@ -11,7 +11,7 @@ import UIKit
  Class for default data grid view cell.
  */
 open class DataGridViewContentCell: DataGridViewBaseCell {
-    private static var __once: () = {
+    private static let __once = {
         let appearance = DataGridViewContentCell.appearance()
         appearance.textLabelInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         
@@ -24,7 +24,7 @@ open class DataGridViewContentCell: DataGridViewBaseCell {
             labelAppearance.appearanceMinimumScaleFactor = 0.5
             labelAppearance.appearanceNumberOfLines = 0
         }
-        
+        return appearance
     }()
 
     override public init(frame: CGRect) {
